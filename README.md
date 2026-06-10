@@ -10,14 +10,14 @@
 
 | Feature | Description |
 |---|---|
-| 🔍 **Multi-tool SAST scanning** | Runs Bandit (Python) and Semgrep (multi-language) and normalizes findings into a unified schema |
-| 🧹 **False-positive filtering** | Rule-based YAML config suppresses known-safe patterns (test files, sample code, docs) |
-| 📊 **HTML security dashboard** | Self-contained dashboard with severity cards, findings-by-tool bar chart, vulnerability trend line chart, and a searchable/sortable findings table |
-| 📝 **Markdown + JSON reports** | Machine-readable JSON for downstream tooling; human-readable Markdown for PR summaries |
-| 📈 **Metrics trend tracking** | Persists vulnerability counts across runs to visualize improvement over time |
-| ⚙️ **GitHub Actions CI/CD** | Two workflows — security scan (blocks PRs on HIGH+) and unit tests — with artifact upload and job summary integration |
-| 🐹 **Go CLI wrapper** | `ssdlc-scan` binary written in Go provides a clean developer interface with structured terminal output and strict input validation |
-| 🛡️ **Security guidelines** | Documented secure coding standards and a developer awareness guide covering OWASP Top 10 patterns |
+| **Multi-tool SAST scanning** | Runs Bandit (Python) and Semgrep (multi-language) and normalizes findings into a unified schema |
+| **False-positive filtering** | Rule-based YAML config suppresses known-safe patterns (test files, sample code, docs) |
+| **HTML security dashboard** | Self-contained dashboard with severity cards, findings-by-tool bar chart, vulnerability trend line chart, and a searchable/sortable findings table |
+| **Markdown + JSON reports** | Machine-readable JSON for downstream tooling; human-readable Markdown for PR summaries |
+| **Metrics trend tracking** | Persists vulnerability counts across runs to visualize improvement over time |
+| **GitHub Actions CI/CD** | Two workflows — security scan (blocks PRs on HIGH+) and unit tests — with artifact upload and job summary integration |
+| **Go CLI wrapper** | `ssdlc-scan` binary written in Go provides a clean developer interface with structured terminal output and strict input validation |
+| **Security guidelines** | Documented secure coding standards and a developer awareness guide covering OWASP Top 10 patterns |
 
 ---
 
