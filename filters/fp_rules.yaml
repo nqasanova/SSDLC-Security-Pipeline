@@ -1,0 +1,49 @@
+# filters/fp_rules.yaml
+# False Positive suppression rules for the SSDLC Security Pipeline.
+#
+# Each rule can contain any combination of:
+#   file_pattern      - glob pattern matched against the finding's file path
+#   rule_id           - exact or prefix match against the scanner rule ID
+#   message_contains  - case-insensitive substring match against the finding message
+#
+# ALL conditions present in a rule must match for the finding to be suppressed.
+# Add a 'description' field to document why each rule exists.
+
+rules:
+
+  # Test files — intentional security anti-patterns are common in tests
+  - description: "Suppress all findings inside test directories"
+    file_pattern: "tests/*"
+
+  - description: "Suppress all findings in files named test_*.py"
+    file_pattern: "test_*"
+
+  - description: "Suppress B101 (assert_used) in any test file"
+    rule_id: "B101"
+    file_pattern: "*test*"
+
+  # Sample / demo application code
+  - description: "Suppress B311 (random) in sample_app — not security-sensitive"
+    rule_id: "B311"
+    file_pattern: "sample_app/*"
+
+  - description: "Suppress hardcoded password warnings in sample fixtures"
+    rule_id: "B105"
+    file_pattern: "sample_app/*"
+
+  - description: "Suppress hardcoded password warnings in sample fixtures (B106)"
+    rule_id: "B106"
+    file_pattern: "sample_app/*"
+
+  # Documentation
+  - description: "Suppress all findings inside the docs directory"
+    file_pattern: "docs/*"
+
+  # Low-signal Semgrep auto rules
+  - description: "Suppress Semgrep generic.secrets findings in config examples"
+    rule_id: "generic.secrets"
+    file_pattern: "*.example"
+
+  - description: "Suppress Semgrep generic.secrets findings in .env.example files"
+    rule_id: "generic.secrets"
+    file_pattern: "*.env.example"
